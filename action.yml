@@ -21,6 +21,13 @@ inputs:
   vnet:
     description: 'The Virtual Network ID that you wish to use'
     required: false
+  connection_stability_check:
+    description: 'Enable connection stability check (verifies DNS resolution and connectivity). Defaults to true.'
+    required: false
+    default: 'true'
+  stability_check_endpoint:
+    description: 'Optional endpoint URL to test connectivity against. If not provided, uses default Cloudflare endpoint.'
+    required: false
 runs:
   using: 'node24'
   main: 'dist/index.js'
